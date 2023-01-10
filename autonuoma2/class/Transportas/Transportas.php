@@ -1,53 +1,45 @@
 <?php
-
 namespace Transportas;
 
-abstract class Transportas
+trait TransportoIsvedimas
 {
-    protected $id;
-    protected $marke;
-    protected $modelis;
-    protected $metai;
-    protected $spalva;
-    protected $kuras;
-    protected $transmisija;
-    protected $paveiksliukas;
-    protected $kaina;
-    protected $pavadinimas;
-
-    public function __construct($data)
+    public function isvedimasKatalogui()
     {
-        $this->id = $data["id"];
-        $this->marke = $data["marke"];
-        $this->modelis = $data["modelis"];
-        $this->metai = $data["metai"];
-        $this->spalva = $data["spalva"];
-        $this->kuras = $data["kuras"];
-        $this->transmisija = $data["transmisija"];
-        $this->paveiksliukas = $data["image"];
-        $this->kaina = $data["kaina"];
-
-        $this->pavadinimas = $this->marke . " " . $this->modelis . " (" . $this->metai . ")";
+      echo '<div class="card">
+        ' . $this->tekstasPaveiksliukas("card-img-top") . ' 
+        <div class="card-body">
+          <h5 class="card-title">' . $this->pavadinimas . '</h5>
+          <p class="card-text">
+            ' . $this->aprasymasTrumpas() . '<br>
+            Kaina: <b>' . $this->tekstasKaina() . '</b>
+          </p>
+          <a href="' . $this->getLink() . '" class="btn btn-primary">Plačiau...</a>
+        </div>
+      </div>';
     }
-
-    abstract protected function aprasymasTrumpas();
-
-    abstract protected function tekstasSavybes();
-
-
-    protected function tekstasKaina()
+  
+    public function isvedimasPilnas()
     {
-        return number_format($this->kaina, 2, ",", "") . " &euro;/val.";
-    }
-
-    protected function tekstasPaveiksliukas($html_class = "")
+      echo '<h3>' . $this->pavadinimas . '</h3>';
+      echo '<div class="row">';
+      echo '<div class="col-lg-6 text-center mb-2">';
+      // echo '<img src="' . $this->paveiksliukas . '" class="img-thumbnail img-fluid w-100" alt="' . $this->pavadinimas . '">';
+      echo $this->tekstasPaveiksliukas("img-thumbnail img-fluid w-100");
+      echo '<div class="mt-2 card"><div class="card-body">Kiana: <b>' . $this->tekstasKaina() . '</b></div></div>';
+      echo '</div>';
+      echo '<div class="col-lg-6 mb-2">';
+      echo $this->tekstasSavybes();
+      echo '</div>';
+      echo '</div>';
+    }  
+    
+    public function __toString()
     {
-        $sablonas = '<img src="%s" class="%s" alt="%s">';
-        return sprintf($sablonas, $this->paveiksliukas, $html_class, $this->pavadinimas);
-    }
+      $isvedimas = $this->marke . " " . $this->modelis;
+      $isvedimas .= " (" . $this->aprasymasTrumpas() . ")";
 
-    protected function getLink()
-    {
-        return "?auto=" . $this->id;
+      return $isvedimas;
     }
 }
+
+?>

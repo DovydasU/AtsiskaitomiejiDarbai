@@ -5,3 +5,4 @@ interface ITransportas {
     public function isvedimasKatalogui();
     public function isvedimasPilnas();
 }
+?>
