@@ -11,4 +11,10 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    resolve: {
+        alias: {
+            '~bootstrap': path.resolve(__dirname, 'nodes_modules/bootstrap'),
+        }
+    }
 });
+
