@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{asset('bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="{{ asset('css/fontawesome.css') }}">
     <link rel="stylesheet" href="{{ asset('css/templatemo-woox-travel.css') }}">

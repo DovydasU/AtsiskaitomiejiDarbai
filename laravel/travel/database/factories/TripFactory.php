@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -50,6 +52,8 @@ class TripFactory extends Factory
         
         $trip_nr = fake()->numberBetween(0, count($trips) - 1);
         return [
+            'category_id' => Category::all()->random()->id,
+            'user_id' => User::all()->random()->id,
             'name' => $trips[$trip_nr][0],
             'location' => $trips[$trip_nr][1],
             'image' => "/images/trip-" . fake()->numberBetween(1, 11) . ".jpg",

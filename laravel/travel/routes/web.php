@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\CatagoryController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\TripController;
 use App\Http\Controllers\HomeController;
@@ -38,6 +38,8 @@ Route::get('/reservation', function () {
     return view('reservation');
 })->name('reservation');
 
+
+Route::resource('category', CategoryController::class);
 
 
 Route::middleware([
