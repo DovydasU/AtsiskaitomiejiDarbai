@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('trips', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('category_id');
             $table->string('name');
             $table->string('location');
             $table->string('image');
@@ -23,7 +24,7 @@ return new class extends Migration
             $table->string('contact');
             $table->date('start');
             $table->date('end');
-            $table->enum('status', ['active', 'deactive']);
+            $table->boolean('active')->default(1);
             $table->timestamps();
         });
     }

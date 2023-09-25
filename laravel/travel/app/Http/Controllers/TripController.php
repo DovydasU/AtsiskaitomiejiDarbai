@@ -14,7 +14,8 @@ class TripController extends Controller
      */
     public function index()
     {
-        //
+        $trip_list = Trip::all();
+        return view('trip', compact("trip_list"));
     }
 
     /**
@@ -30,7 +31,19 @@ class TripController extends Controller
      */
     public function store(StoreTripRequest $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'location' => 'required',
+            'price'  => 'required',
+            'space'  => 'required',
+            'image'  => 'required',
+            'contact'  => 'required',
+            'description'  => 'required'
+        ]);
+
+        Trip::create($request->post());
+
+        return redirect()->route('/')->with('success', 'Trip has been created successfully.');
     }
 
     /**
@@ -38,7 +51,7 @@ class TripController extends Controller
      */
     public function show(Trip $trip)
     {
-        //
+        return view('trip-single', compact("trip"));
     }
 
     /**

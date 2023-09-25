@@ -186,26 +186,26 @@
                     <div class="items">
                         <div class="row">
                             <div class="col-lg-12">
+                                @foreach($trip_list as $item)
                                 <div class="item">
                                     <div class="row">
                                         <div class="col-lg-4 col-sm-5">
                                             <div class="image">
-                                                <img src="images/country-01.jpg" alt="">
+                                                <img src="{{ $item->image }}" alt="">
                                             </div>
                                         </div>
                                         <div class="col-lg-8 col-sm-7">
                                             <div class="right-content">
-                                                <h4>SWITZERLAND</h4>
-                                                <span>Europe</span>
+                                                <h4>{{ $item->name }}</h4>
+                                                <span>{{ $item->location }}</span>
                                                 <div class="main-button">
                                                     <a href="{{ route('about') }}">Explore More</a>
                                                 </div>
-                                                <p>Woox Travel is a professional Bootstrap 5 theme HTML CSS layout for your
-                                                    website. You can use this layout for your commercial work.</p>
+                                                <p>{{ $item->description }}</p>
                                                 <ul class="info">
-                                                    <li><i class="fa fa-user"></i> 8.66 Mil People</li>
-                                                    <li><i class="fa fa-globe"></i> 41.290 km2</li>
-                                                    <li><i class="fa fa-home"></i> $1.100.200</li>
+                                                    <li><i class="fa fa-calendar"></i> {{ $item->start }}</li>
+                                                    <li><i class="fa fa-users"></i> {{ $item->space }}</li>
+                                                    <li><i class="fa fa-usd"></i> {{ $item->price }}</li>
                                                 </ul>
                                                 <div class="text-button">
                                                     <a href="{{ route('about') }}">Need Directions ? <i
@@ -215,8 +215,9 @@
                                         </div>
                                     </div>
                                 </div>
+                                @endforeach
                             </div>
-                            <div class="col-lg-12">
+                            {{-- <div class="col-lg-12">
                                 <div class="item">
                                     <div class="row">
                                         <div class="col-lg-4 col-sm-5">
@@ -280,7 +281,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="col-lg-12">
                                 <ul class="page-numbers">
                                     <li><a href="#"><i class="fa fa-arrow-left"></i></a></li>

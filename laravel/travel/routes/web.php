@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\CatagoryController;
+use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\TripController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,9 +21,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/index', function () {
-    return view('index');
-})->name('index');
+Route::get('/index', [HomeController::class, "index"])->name('index');
+// Route::get('/index', function () {
+//     return view('index');
+// })->name('index');
 
 Route::get('/deals', function () {
     return view('deals');
@@ -32,7 +37,6 @@ Route::get('/about', function () {
 Route::get('/reservation', function () {
     return view('reservation');
 })->name('reservation');
-
 
 
 
