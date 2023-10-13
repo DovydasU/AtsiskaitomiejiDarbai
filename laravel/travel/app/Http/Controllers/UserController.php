@@ -21,6 +21,18 @@ class UserController extends Controller
     }
 
     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+     public function table()
+     {
+         $user_list = User::all();
+         return view('table', compact("user_list"));
+     }
+
+    /**
      * Show the form for creating a new resource.
      */
     public function create()

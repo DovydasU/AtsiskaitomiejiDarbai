@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 use App\Models\Trip;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreTripRequest;
@@ -17,6 +19,18 @@ class TripController extends Controller
         $trip_list = Trip::all();
         return view('trip', compact("trip_list"));
     }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+     public function trip()
+     {
+         $trip_list = Trip::all();
+         return view('trip', compact("trip_list"));
+     }
 
     /**
      * Show the form for creating a new resource.
@@ -51,7 +65,7 @@ class TripController extends Controller
      */
     public function show(Trip $trip)
     {
-        return view('trip-single', compact("trip"));
+        return view('trip.show', compact('trip'));
     }
 
     /**
@@ -59,7 +73,7 @@ class TripController extends Controller
      */
     public function edit(Trip $trip)
     {
-        //
+        return view('trip.edit',compact('trip'));
     }
 
     /**
@@ -67,7 +81,23 @@ class TripController extends Controller
      */
     public function update(UpdateTripRequest $request, Trip $trip)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'location' => 'required',
+            'image' => '',
+            'space' => 'required',
+            'space_used' => '',
+            'price' => 'required',
+            'description' => 'required',
+            'contact' => 'required',
+            'start' => 'required',
+            'end' => 'required',
+        ]);
+        
+        $trip->update($request->all());
+        
+        return redirect()->route('trip')
+                        ->with('success','Trip updated successfully');
     }
 
     /**
@@ -75,6 +105,12 @@ class TripController extends Controller
      */
     public function destroy(Trip $trip)
     {
-        //
+        if (User::find(Auth::user()->id)->cannot('delete', $trip)) {
+            abort(403);
+        }
+        // dd($trip->delete());
+        $trip->delete();
+         
+        return redirect()->route('trip')->with('success','Trip deleted successfully'); 
     }
 }
