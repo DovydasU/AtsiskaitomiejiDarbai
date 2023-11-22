@@ -1,26 +1,3 @@
-{{-- <!-- resources/views/trip/show.blade.php -->
-
-<!-- Button to trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#showModal">
-    Show Trip
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="showModal" tabindex="-1" aria-labelledby="showModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="showModalLabel">Trip Details</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <h1>{{ $trip->name }}</h1>
-                <p>Location: {{ $trip->location }}</p>
-                <!-- Add more details as needed -->
-            </div>
-        </div>
-    </div>
-</div> --}}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,56 +51,56 @@
                             <div class="col-lg-6">
                                 <fieldset>
                                     <label for="Name" class="form-label">Kelionės Šalis</label>
-                                    <input type="text" name="Name" class="Name" readonly value="John Doe">
+                                    <input type="text" name="Name" class="Name" readonly value="{{ $trip->name }}">
                                 </fieldset>
                             </div>
 
                             <div class="col-lg-6">
                                 <fieldset>
                                     <label for="Number" class="form-label">Kelionės Miestas</label>
-                                    <input type="text" name="Name" class="Name" readonly value="John Doe">
+                                    <input type="text" name="Name" class="Name" readonly value="{{ $trip->location }}">
                                 </fieldset>
                             </div>
 
                             <div class="col-lg-6">
                                 <fieldset>
                                     <label for="chooseGuests" class="form-label">Vietos Kelionėje</label>
-                                    <input type="text" name="Number" class="Number" readonly value="John Doe">
+                                    <input type="text" name="Number" class="Number" readonly value="{{ $trip->space }}">
                                 </fieldset>
                             </div>
 
                             <div class="col-lg-6">
                                 <fieldset>
                                     <label for="Number" class="form-label">Likusios Vietos</label>
-                                    <input type="text" name="Number" class="Number" readonly value="John Doe">
+                                    <input type="text" name="Number" class="Number" readonly value="{{ $trip->space_used }}">
                                 </fieldset>
                             </div>
 
                             <div class="col-lg-6">
                                 <fieldset>
                                     <label for="Number" class="form-label">Kelionės pradžia</label>
-                                    <input type="date" name="date" class="date" readonly value="John Doe">
+                                    <input type="date" name="date" class="date" readonly value="{{ $trip->start }}">
                                 </fieldset>
                             </div>
 
                             <div class="col-lg-6">
                                 <fieldset>
                                     <label for="Number" class="form-label">Kelionės pabaiga</label>
-                                    <input type="date" name="date" class="date" readonly value="John Doe">
+                                    <input type="date" name="date" class="date" readonly value="{{ $trip->end }}">
                                 </fieldset>
                             </div>
 
                             <div class="col-lg-12">
                                 <fieldset>
                                     <label for="Number" class="form-label">Kelionės Aprašymas</label>
-                                    <textarea name="description" class="form-control" readonly rows="5">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</textarea>
+                                    <textarea name="description" class="form-control" readonly rows="3">{{ $trip->description }}</textarea>
                                 </fieldset>
                             </div>
 
                             <div class="col-lg-12">
                                 <fieldset>
                                     <label for="Number" class="form-label">Kontaktai</label>
-                                    <textarea name="description" class="form-control" readonly rows="5">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</textarea>
+                                    <textarea name="description" class="form-control" readonly rows="3">{{ $trip->contact }}</textarea>
                                 </fieldset>
                             </div>
 
