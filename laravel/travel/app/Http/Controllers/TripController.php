@@ -64,7 +64,8 @@ class TripController extends Controller
      */
     public function edit(Trip $trip)
     {
-        return view('trip.edit', compact('trip'));
+        $categories = Category::all();
+        return view('trip.edit', compact('trip', 'categories'));
     }
 
     /**
