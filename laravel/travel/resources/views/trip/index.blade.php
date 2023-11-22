@@ -4,8 +4,10 @@
 
 @section('content')
     <div class="card">
-        <h5 class="card-header">Kelionės</h5>
-        <a href="{{ route('trip.create') }}" class="btn btn-primary">Create</a>
+        <div class="d-flex justify-content-between align-items-center">
+            <h5 class="card-header green-header">Kelionės</h5>
+            <a href="{{ route('trip.create') }}" class="btn btn-lg btn-success" id="createButton">Create</a>
+        </div>
         <table class="table">
             <thead>
                 <tr>
@@ -57,7 +59,16 @@
 @endsection
 
 @section('styles')
-    <!-- Add any additional styles if needed -->
+    <style>
+        #createButton{
+            width: 250px;
+            margin-right: 18px;
+        }
+
+        .green-header {
+            color: #aef359;
+        }
+    </style>
 @endsection
 
 @section('scripts')
