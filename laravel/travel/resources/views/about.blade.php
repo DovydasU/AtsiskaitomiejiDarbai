@@ -15,7 +15,7 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt uttersi
                             labore et dolore magna aliqua is ipsum suspendisse ultrices gravida</p>
                         <div class="main-button">
-                            <a href="{{ route('reservation')}}">Discover More</a>
+                            <a href="">Discover More</a>
                         </div>
                     </div>
                 </div>
@@ -119,7 +119,7 @@
                                         <li><i class="fa fa-building"></i> Daily Places Visit</li>
                                     </ul>
                                     <div class="main-button">
-                                        <a href="{{ route('reservation')}}">Make a Reservation</a>
+                                        <a href="">Make a Reservation</a>
                                     </div>
                                 </div>
                             </div>
@@ -138,7 +138,7 @@
                                         <li><i class="fa fa-building"></i> Daily Places Visit</li>
                                     </ul>
                                     <div class="main-button">
-                                        <a href="{{ route('reservation')}}">Make a Reservation</a>
+                                        <a href="">Make a Reservation</a>
                                     </div>
                                 </div>
                             </div>
@@ -157,7 +157,7 @@
                                         <li><i class="fa fa-building"></i> Daily Places Visit</li>
                                     </ul>
                                     <div class="main-button">
-                                        <a href="{{ route('reservation')}}">Make a Reservation</a>
+                                        <a href="">Make a Reservation</a>
                                     </div>
                                 </div>
                             </div>
@@ -176,7 +176,7 @@
                                         <li><i class="fa fa-building"></i> Daily Places Visit</li>
                                     </ul>
                                     <div class="main-button">
-                                        <a href="{{ route('reservation')}}">Make a Reservation</a>
+                                        <a href="">Make a Reservation</a>
                                     </div>
                                 </div>
                             </div>
@@ -195,7 +195,7 @@
                                         <li><i class="fa fa-building"></i> Daily Places Visit</li>
                                     </ul>
                                     <div class="main-button">
-                                        <a href="{{ route('reservation')}}">Make a Reservation</a>
+                                        <a href="">Make a Reservation</a>
                                     </div>
                                 </div>
                             </div>
@@ -214,7 +214,7 @@
                                         <li><i class="fa fa-building"></i> Daily Places Visit</li>
                                     </ul>
                                     <div class="main-button">
-                                        <a href="{{ route('reservation')}}">Make a Reservation</a>
+                                        <a href="">Make a Reservation</a>
                                     </div>
                                 </div>
                             </div>
@@ -271,7 +271,7 @@
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
                     </p>
                     <div class="main-button">
-                        <a href="{{ route('reservation')}}">Discover More</a>
+                        <a href="">Discover More</a>
                     </div>
                 </div>
             </div>
@@ -359,7 +359,7 @@
                 </div>
                 <div class="col-lg-12">
                     <div class="main-button text-center">
-                        <a href="{{ route('deals')}}">Discover All Places</a>
+                        <a href="">Discover All Places</a>
                     </div>
                 </div>
             </div>

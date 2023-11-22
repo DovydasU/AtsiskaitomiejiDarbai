@@ -21,7 +21,7 @@ class TripPolicy
      */
     public function view(User $user, Trip $trip): bool
     {
-        return $user->can('manage trips') && ($user->hasRole('Vartotojas Administratorius') || $user->id == $trip->user_id);
+        return $user->can('manage trips') && ($user->hasRole('svetaines administratorius') || $user->id == $trip->user_id);
     }
 
     /**
@@ -37,7 +37,7 @@ class TripPolicy
      */
     public function update(User $user, Trip $trip): bool
     {
-        return $user->can('manage trips') && ($user->hasRole('Vartotojas Administratorius') || $user->id == $trip->user_id);
+        return $user->can('manage trips') && ($user->hasRole('svetaines administratorius') || $user->id == $trip->user_id);
     }
 
     /**
@@ -45,7 +45,7 @@ class TripPolicy
      */
     public function delete(User $user, Trip $trip): bool
     {
-        return $user->can('manage trips') && ($user->hasRole('Vartotojas Administratorius') || $user->id == $trip->user_id);
+        return $user->can('manage trips') && ($user->hasRole('svetaines administratorius') || $user->id == $trip->user_id);
     }
 
     /**

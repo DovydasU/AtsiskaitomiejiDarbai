@@ -1,5 +1,7 @@
 <?php
 
+use App\Policies\TripPolicy;
+use Spatie\Permission\Models\Permission;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
@@ -53,8 +55,8 @@ Route::get('/admin', function () {
     // })->name('trip');
     
 Route::middleware('auth')->group(function () {
-    Route::get('/trip', [TripController::class, "trip"])->name('trip');
-    Route::resource('category', CategoryController::class);
+    // Route::get('/trip', [TripController::class, "trip"])->name('trip');
+    // Route::resource('category', CategoryController::class);
     Route::get('/index', [HomeController::class, "index"])->name('index');
     Route::resource('trip', TripController::class);
     Route::get('/table', [UserController::class, "table"])->name('table');

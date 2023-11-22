@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Trip;
+use App\Http\Controllers\CategoryController;
+use App\Models\Category;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreTripRequest;
 use App\Http\Requests\UpdateTripRequest;
@@ -17,27 +19,16 @@ class TripController extends Controller
     public function index()
     {
         $trip_list = Trip::all();
-        return view('trip', compact("trip_list"));
+        return view('trip.index', compact("trip_list"));
     }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
-     public function trip()
-     {
-         $trip_list = Trip::all();
-         return view('trip', compact("trip_list"));
-     }
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        return view('trip.create', compact('categories'));
     }
 
     /**
@@ -52,12 +43,12 @@ class TripController extends Controller
             'space'  => 'required',
             'image'  => 'required',
             'contact'  => 'required',
-            'description'  => 'required'
+            'description'  => 'required',
         ]);
 
         Trip::create($request->post());
 
-        return redirect()->route('/')->with('success', 'Trip has been created successfully.');
+        return redirect()->route('trip.index')->with('success', 'Trip has been created successfully.');
     }
 
     /**
@@ -73,7 +64,7 @@ class TripController extends Controller
      */
     public function edit(Trip $trip)
     {
-        return view('trip.edit',compact('trip'));
+        return view('trip.edit', compact('trip'));
     }
 
     /**
@@ -96,8 +87,7 @@ class TripController extends Controller
         
         $trip->update($request->all());
         
-        return redirect()->route('trip')
-                        ->with('success','Trip updated successfully');
+        return redirect()->route('trip.index')->with('success','Trip updated successfully');
     }
 
     /**
@@ -105,12 +95,12 @@ class TripController extends Controller
      */
     public function destroy(Trip $trip)
     {
-        if (User::find(Auth::user()->id)->cannot('delete', $trip)) {
-            abort(403);
+        try {
+            $trip->delete();
+            return redirect()->route('trip.index')->with('success', 'Trip deleted successfully');
+        } catch (\Exception $e) {
+            // Log the error or handle it as needed
+            return redirect()->route('trip.index')->with('error', 'Error deleting trip');
         }
-        // dd($trip->delete());
-        $trip->delete();
-         
-        return redirect()->route('trip')->with('success','Trip deleted successfully'); 
     }
 }
