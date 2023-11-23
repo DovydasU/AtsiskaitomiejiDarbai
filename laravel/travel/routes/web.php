@@ -26,10 +26,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/index', function () {
-//     return view('index');
-// })->name('index');
-
 Route::get('/deals', function () {
     return view('deals');
 })->name('deals');
@@ -46,23 +42,13 @@ Route::get('/admin', function () {
     return view('admin');
 })->name('admin');
 
-// Route::get('/table', function () {
-//     return view('table');
-// })->name('table');
-
-// Route::get('/trip', function () {
-    //     return view('trip');
-    // })->name('trip');
-    
 Route::middleware('auth')->group(function () {
     // Route::get('/trip', [TripController::class, "trip"])->name('trip');
     // Route::resource('category', CategoryController::class);
     Route::get('/index', [HomeController::class, "index"])->name('index');
     Route::resource('trip', TripController::class);
-    Route::get('/table', [UserController::class, "table"])->name('table');
     Route::resource('user', UserController::class);
     Route::resource('category', CategoryController::class);
-
 });
 
 Route::middleware([

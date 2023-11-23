@@ -365,20 +365,17 @@
             </div>
         </div>
     </div>
-
-    @include('layouts.app')
-
+    {{-- @include('layouts.app') --}}
     <script>
         $(".option").click(function() {
             $(".option").removeClass("active");
             $(this).addClass("active");
         });
     </script>
-
-@endsection
-
-@section('scripts')
 @endsection
 
 @section('styles')
+@endsection
+
+@section('scripts')
 @endsection

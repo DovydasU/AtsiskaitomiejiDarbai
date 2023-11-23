@@ -46,9 +46,7 @@
     <script src="{{ asset('js/tabs.js') }}"></script>
     <script src="{{ asset('js/popup.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
-
     @yield('scripts')
-
 </body>
 
 </html>

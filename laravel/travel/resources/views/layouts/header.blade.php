@@ -10,10 +10,10 @@
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li><a href="{{ route('index')}}" class="active">Home</a></li>
-                        <li><a href="{{ route('about')}}">About</a></li>
-                        <li><a href="{{ route('deals')}}">Deals</a></li>
-                        <li><a href="{{ route('reservation')}}">Reservation</a></li>
+                        <li><a href="{{ route('index')}}" class="{{ request()->routeIs('index') ? 'active' : '' }}">Home</a></li>
+                        <li><a href="{{ route('about')}}" class="{{ request()->routeIs('about') ? 'active' : '' }}">About</a></li>
+                        <li><a href="{{ route('deals')}}" class="{{ request()->routeIs('deals') ? 'active' : '' }}">Deals</a></li>
+                        <li><a href="{{ route('reservation')}}" class="{{ request()->routeIs('reservation') ? 'active' : '' }}">Reservation</a></li>
                         <li>@if (Route::has('login'))
                           <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
                               @auth
