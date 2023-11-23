@@ -60,6 +60,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/index', [HomeController::class, "index"])->name('index');
     Route::resource('trip', TripController::class);
     Route::get('/table', [UserController::class, "table"])->name('table');
+    Route::resource('user', UserController::class);
+
 });
 
 Route::middleware([
@@ -71,7 +73,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-    Route::group(['middleware' => ['permission:manage users']], function () {
-        Route::resource("user", UserController::class);
-    });
+    // Route::group(['middleware' => ['permission:manage users']], function () {
+    //     Route::resource("user", UserController::class);
+    // });
 });

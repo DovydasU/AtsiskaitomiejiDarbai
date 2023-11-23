@@ -36,7 +36,7 @@
                     <div id="map">
                         <div
                             style="width: 1300px; height: 600px; border-radius: 23px; display: block; margin: 0 auto; overflow: hidden;">
-                            <img src="/images/trip/tripImg1.jpg" alt="Trip Image"
+                            <img src="{{ $trip->image }}" alt="Trip Image"
                                 style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                     </div>
