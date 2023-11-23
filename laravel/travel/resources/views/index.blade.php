@@ -200,14 +200,14 @@
                                                 <div class="main-button">
                                                     <a href="{{ route('about') }}">Explore More</a>
                                                 </div>
-                                                <p>{{ $item->description }}</p>
+                                                <p> <h4>Description:</h4>{{ $item->description }}</p>
                                                 <ul class="info">
                                                     <li><i class="fa fa-calendar"></i> {{ $item->start }}</li>
                                                     <li><i class="fa fa-users"></i> {{ $item->space }}</li>
                                                     <li><i class="fa fa-usd"></i> {{ $item->price }}</li>
                                                 </ul>
                                                 <div class="text-button">
-                                                    <a href="{{ route('about') }}">Need Directions ? <i
+                                                    <a href="">Read More? <i
                                                             class="fa fa-arrow-right"></i></a>
                                                 </div>
                                             </div>
@@ -219,21 +219,18 @@
                         <div class="col-lg-12">
                             <nav aria-label="Page navigation">
                                 <ul class="pagination justify-content-center">
-                                    {{-- Previous Page Link --}}
                                     @if ($trip_list->onFirstPage())
                                         <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
                                     @else
                                         <li class="page-item"><a class="page-link" href="{{ $trip_list->previousPageUrl() }}" rel="prev">&laquo;</a></li>
                                     @endif
                         
-                                    {{-- Pagination Elements --}}
                                     @for ($i = 1; $i <= $trip_list->lastPage(); $i++)
                                         <li class="page-item {{ ($i == $trip_list->currentPage()) ? 'active' : '' }}">
                                             <a class="page-link" href="{{ $trip_list->url($i) }}">{{ $i }}</a>
                                         </li>
                                     @endfor
                         
-                                    {{-- Next Page Link --}}
                                     @if ($trip_list->hasMorePages())
                                         <li class="page-item"><a class="page-link" href="{{ $trip_list->nextPageUrl() }}" rel="next">&raquo;</a></li>
                                     @else
