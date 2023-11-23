@@ -61,6 +61,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('trip', TripController::class);
     Route::get('/table', [UserController::class, "table"])->name('table');
     Route::resource('user', UserController::class);
+    Route::resource('category', CategoryController::class);
 
 });
 

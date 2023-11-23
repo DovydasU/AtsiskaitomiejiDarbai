@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $trip_list = Trip::all()->random(3);
+        $trip_list = Trip::paginate(3);
         return view('index', compact("trip_list"));
     }
 }

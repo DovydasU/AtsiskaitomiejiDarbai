@@ -81,7 +81,7 @@
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="tables-basic.html" class="menu-link">
+                    <a href="{{ route('category.index') }}" class="menu-link">
                         <i class="menu-icon tf-icons bx bx-collection"></i>
                         <div data-i18n="Tables">Categories</div>
                     </a>
