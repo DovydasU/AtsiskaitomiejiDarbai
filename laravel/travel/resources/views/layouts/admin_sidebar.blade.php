@@ -58,7 +58,7 @@
 
             <ul class="menu-inner py-1">
                 <!-- Dashboard -->
-                <li class="menu-item active">
+                <li class="menu-item {{ request()->routeIs('admin') ? 'active' : '' }}">
                     <a href="{{ route('admin') }}" class="menu-link">
                         <i class="menu-icon tf-icons bx bx-home-circle"></i>
                         <div data-i18n="Analytics">Dashboard</div>
@@ -68,19 +68,21 @@
                 <li class="menu-header small text-uppercase">
                     <span class="menu-header-text">Pages</span>
                 </li>
-                <li class="menu-item">
+                <li class="menu-item {{ request()->routeIs('trip.index') ? 'active' : '' }}">
                     <a href="{{ route('trip.index') }}" class="menu-link">
                         <i class="menu-icon tf-icons bx bx-table"></i>
                         <div data-i18n="Tables">Trips</div>
                     </a>
                 </li>
-                <li class="menu-item">
+                
+                <li class="menu-item {{ request()->routeIs('user.index') ? 'active' : '' }}">
                     <a href="{{ route('user.index') }}" class="menu-link">
                         <i class="menu-icon tf-icons bx bx-support"></i>
                         <div data-i18n="Tables">Users</div>
                     </a>
                 </li>
-                <li class="menu-item">
+                
+                <li class="menu-item {{ request()->routeIs('category.index') ? 'active' : '' }}">
                     <a href="{{ route('category.index') }}" class="menu-link">
                         <i class="menu-icon tf-icons bx bx-collection"></i>
                         <div data-i18n="Tables">Categories</div>
