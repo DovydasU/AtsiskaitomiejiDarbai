@@ -4,7 +4,7 @@
             <div class="col-12">
                 <nav class="main-nav">
                     <a href="{{ route('index')}}" class="logo">
-                        <img src="images/logo.png" alt="">
+                        <img src="{{ asset('images/photos/logo.png') }}" alt="">
                     </a>
                     <ul class="nav">
                         <li><a href="{{ route('index')}}" class="{{ request()->routeIs('index') ? 'active' : '' }}">Home</a></li>

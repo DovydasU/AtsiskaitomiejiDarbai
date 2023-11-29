@@ -45,6 +45,12 @@ class TripController extends Controller
     
             $trip = Trip::create($tripData);
     
+            $name = $trip->id . '-' . time() . '-' . $request->image->getClientOriginalName();
+            $name = str_replace(' ', '', $name);
+            $request->image->storeAs('trip', $name, 'public');
+            $trip->image = $name;
+            $trip->save();
+
             // Log success or any other information
             Log::info('Trip created successfully', ['trip_id' => $trip->id]);
     
