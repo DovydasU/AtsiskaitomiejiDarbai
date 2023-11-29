@@ -19,8 +19,17 @@ class TripController extends Controller
      */
     public function index()
     {
-        $trip_list = Trip::all();
-        return view('trip.index', compact("trip_list"));
+        $user = auth()->user();
+
+        if ($user->roles->pluck('name')->contains('svetaines administratorius')) {
+            $trip_list = Trip::all();
+        } elseif ($user->roles->pluck('name')->contains('kelioniu vadovas')) {
+            $trip_list = Trip::where('user_id', $user->id)->get();
+        } else {
+            abort(403, 'Unauthorized action.');
+        }
+
+        return view('trip.index', compact('trip_list'));
     }
 
     /**
@@ -42,9 +51,9 @@ class TripController extends Controller
             $tripData['image'] = "testing";
             $tripData['space_used'] = 0;
             $tripData['user_id'] = auth()->id();
-    
+
             $trip = Trip::create($tripData);
-    
+
             $name = $trip->id . '-' . time() . '-' . $request->image->getClientOriginalName();
             $name = str_replace(' ', '', $name);
             $request->image->storeAs('trip', $name, 'public');
@@ -53,7 +62,7 @@ class TripController extends Controller
 
             // Log success or any other information
             Log::info('Trip created successfully', ['trip_id' => $trip->id]);
-    
+
             return redirect()->route('trip.index')->with('success', 'Trip has been created successfully.');
         } catch (\Exception $e) {
             // Log the error
@@ -86,9 +95,19 @@ class TripController extends Controller
      */
     public function update(UpdateTripRequest $request, Trip $trip)
     {
-        $trip->update($request->all());
-        
-        return redirect()->route('trip.index')->with('success','Trip updated successfully');
+        $tripData = $request->validated();
+
+        // Handle image update only if a new image is provided
+        if ($request->hasFile('image')) {
+            $name = $trip->id . '-' . time() . '-' . $request->image->getClientOriginalName();
+            $name = str_replace(' ', '', $name);
+            $request->image->storeAs('trip', $name, 'public');
+            $tripData['image'] = $name;
+        }
+
+        $trip->update($tripData);
+
+        return redirect()->route('trip.index')->with('success', 'Trip updated successfully');
     }
 
     /**

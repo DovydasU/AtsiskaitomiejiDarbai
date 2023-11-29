@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->string('name');
             $table->string('location');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->integer('space');
             $table->integer('space_used');
             $table->decimal('price', $precision = 8, $scale = 2);

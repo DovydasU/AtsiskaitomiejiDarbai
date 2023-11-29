@@ -56,7 +56,7 @@ class TripFactory extends Factory
             'user_id' => User::all()->random()->id,
             'name' => $trips[$trip_nr][0],
             'location' => $trips[$trip_nr][1],
-            'image' => "/images/trip-" . fake()->numberBetween(1, 11) . ".jpg",
+            'image' => "trip-" . fake()->numberBetween(1, 11) . ".jpg",
             'space' => fake()->randomElement([20, 30, 40]),
             'space_used' => fake()->randomElement([10, 15, 30]),
             'price' => fake()->randomFloat(2, 30, 150),

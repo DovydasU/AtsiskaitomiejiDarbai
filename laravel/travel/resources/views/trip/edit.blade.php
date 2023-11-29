@@ -39,8 +39,8 @@
 
                 <div class="mb-3">
                     <label for="image" class="form-label">Image</label>
-                    <input type="file" class="form-control" id="image" name="image" accept="image/*" value="{{ $trip->image }}" required>
-                </div>
+                    <input type="file" class="form-control" id="image" name="image" accept="image/*">
+                </div>                
 
                 <div class="mb-3">
                     <label for="space" class="form-label">Space</label>

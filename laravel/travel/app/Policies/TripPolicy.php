@@ -21,7 +21,12 @@ class TripPolicy
      */
     public function view(User $user, Trip $trip): bool
     {
-        return $user->can('manage trips') && ($user->hasRole('svetaines administratorius') || $user->id == $trip->user_id);
+        if ($user->hasRole('svetaines administratorius')) {
+            return true; // Admin can view all trips
+        }
+    
+        // Kelioniu vadovas can view only their created trips
+        return $user->id == $trip->user_id;
     }
 
     /**

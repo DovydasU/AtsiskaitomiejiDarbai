@@ -11,7 +11,8 @@ class UpdateTripRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        // You might want to customize this logic based on your application's requirements
+        return true;
     }
 
     /**
@@ -22,7 +23,16 @@ class UpdateTripRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required',
+            'choice' => 'required',
+            'location' => 'required',
+            'price' => 'required',
+            'image' => 'nullable',
+            'space' => 'required',
+            'description' => 'required',
+            'contact' => 'required',
+            'start' => 'required',
+            'end' => 'required',
         ];
     }
 }

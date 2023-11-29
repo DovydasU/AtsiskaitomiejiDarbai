@@ -14,6 +14,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         \App\Models\Trip::class => \App\Policies\TripPolicy::class,
+        Trip::class => TripPolicy::class,
     ];
 
     /**
