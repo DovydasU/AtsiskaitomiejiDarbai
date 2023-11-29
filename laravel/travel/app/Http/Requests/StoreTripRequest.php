@@ -11,7 +11,7 @@ class StoreTripRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,15 @@ class StoreTripRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required',
+            'category_id' => 'required',
+            'location' => 'required',
+            'space' => 'required',
+            'price' => 'required',
+            'description' => 'required',
+            'contact' => 'required',
+            'start' => 'required',
+            'end' => 'required',
         ];
     }
 }

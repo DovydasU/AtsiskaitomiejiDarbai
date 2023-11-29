@@ -29,7 +29,7 @@ class TripPolicy
      */
     public function create(User $user): bool
     {
-        return $user->can('manage trips');
+        return $user->hasRole('svetaines administratorius') || $user->hasRole('kelioniu vadovas');
     }
 
     /**

@@ -10,6 +10,7 @@ use App\Models\Category;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreTripRequest;
 use App\Http\Requests\UpdateTripRequest;
+use Illuminate\Support\Facades\Log;
 
 class TripController extends Controller
 {
@@ -36,19 +37,25 @@ class TripController extends Controller
      */
     public function store(StoreTripRequest $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'location' => 'required',
-            'price'  => 'required',
-            'space'  => 'required',
-            'image'  => 'required',
-            'contact'  => 'required',
-            'description'  => 'required',
-        ]);
-
-        Trip::create($request->post());
-
-        return redirect()->route('trip.index')->with('success', 'Trip has been created successfully.');
+        try {
+            $tripData = $request->validated();
+            $tripData['image'] = "testing";
+            $tripData['space_used'] = 0;
+            $tripData['user_id'] = auth()->id();
+    
+            $trip = Trip::create($tripData);
+    
+            // Log success or any other information
+            Log::info('Trip created successfully', ['trip_id' => $trip->id]);
+    
+            return redirect()->route('trip.index')->with('success', 'Trip has been created successfully.');
+        } catch (\Exception $e) {
+            // Log the error
+            Log::error('Error creating trip: ' . $e->getMessage());
+            dd($e->getMessage());
+            // Display a generic error message or redirect with an error status
+            return redirect()->route('trip.index')->with('error', 'Error creating trip. Please try again.');
+        }
     }
 
     /**
@@ -73,19 +80,6 @@ class TripController extends Controller
      */
     public function update(UpdateTripRequest $request, Trip $trip)
     {
-        $request->validate([
-            'name' => 'required',
-            'location' => 'required',
-            'image' => '',
-            'space' => 'required',
-            'space_used' => '',
-            'price' => 'required',
-            'description' => 'required',
-            'contact' => 'required',
-            'start' => 'required',
-            'end' => 'required',
-        ]);
-        
         $trip->update($request->all());
         
         return redirect()->route('trip.index')->with('success','Trip updated successfully');

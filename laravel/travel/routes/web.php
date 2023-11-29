@@ -22,9 +22,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/deals', function () {
     return view('deals');
@@ -45,7 +45,7 @@ Route::get('/admin', function () {
 Route::middleware('auth')->group(function () {
     // Route::get('/trip', [TripController::class, "trip"])->name('trip');
     // Route::resource('category', CategoryController::class);
-    Route::get('/index', [HomeController::class, "index"])->name('index');
+    Route::get('/', [HomeController::class, "index"])->name('index');
     Route::resource('trip', TripController::class);
     Route::resource('user', UserController::class);
     Route::resource('category', CategoryController::class);

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('trips', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id');
+            $table->foreignId('category_id')->default(1); // or $table->foreignId('category_id')->nullable();
             $table->foreignId('user_id');
             $table->string('name');
             $table->string('location');

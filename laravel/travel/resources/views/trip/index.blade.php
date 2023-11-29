@@ -11,6 +11,7 @@
         <table class="table">
             <thead>
                 <tr>
+                    <th>image</th>
                     <th>name</th>
                     <th>location</th>
                     <th>price</th>
@@ -23,6 +24,7 @@
             <tbody>
                 @foreach ($trip_list as $trip)
                 <tr>
+                    <td><img src="{{ asset('images/trip/' . $trip->image) }}" alt="" width="50" height="50"></td>
                     <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{ $trip->name }}</strong></td>
                     <td>{{ $trip->location }}</td>
                     <td>{{ $trip->price }}</td>
