@@ -190,7 +190,7 @@
                                     <div class="row">
                                         <div class="col-lg-4 col-sm-5">
                                             <div class="image">
-                                                <img src="{{ $item->image }}" alt="">
+                                                <img src="{{ asset('images/trip/' . $item->image) }}" alt="">
                                             </div>
                                         </div>
                                         <div class="col-lg-8 col-sm-7">

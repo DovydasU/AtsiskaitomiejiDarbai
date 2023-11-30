@@ -818,19 +818,19 @@ Banner Style
   transition: 0.3s;
 }
 #section-1 .content-slider .slider #top-banner-1 {
-  background: url('../images/banner-01.jpg') no-repeat center center;
+  background: url('../images/photos/banner-01.jpg') no-repeat center center;
   background-size: cover;
 }
 #section-1 .content-slider .slider #top-banner-2 {
-  background: url('../images/banner-02.jpg') no-repeat center center;
+  background: url('../images/photos/photos/banner-02.jpg') no-repeat center center;
   background-size: cover;
 }
 #section-1 .content-slider .slider #top-banner-3 {
-  background: url('../images/banner-03.jpg') no-repeat center center;
+  background: url('../images/photos/banner-03.jpg') no-repeat center center;
   background-size: cover;
 }
 #section-1 .content-slider .slider #top-banner-4 {
-  background: url('../images/banner-04.jpg') no-repeat center center;
+  background: url('../images/photos/banner-04.jpg') no-repeat center center;
   background-size: cover;
 }
 #section-1 .content-slider nav {
@@ -1064,7 +1064,7 @@ Call To Action Style
 
 .call-to-action {
   margin-top: 120px;
-  background-image: url(../images/cta-bg.jpg);
+  background-image: url(../images/photos/cta-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -1138,7 +1138,7 @@ About Page Style
 
 .about-main-content {
   margin-top: 70px;
-  background-image: url(../images/about-content-bg.jpg);
+  background-image: url(../images/photos/about-content-bg.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1149,7 +1149,7 @@ About Page Style
 .blur-bg {
 	width: 100%;
   height: 100%;
-  background: url(../images/about-content-bg.jpg) no-repeat center center fixed;
+  background: url(../images/photos/about-content-bg.jpg) no-repeat center center fixed;
   background-size: cover;
   filter: blur(8px) brightness(80%);
   position: absolute;
@@ -1842,7 +1842,7 @@ Deals Page Style
 */
 
 .page-heading {
-  background-image: url(../images/heading-bg.jpg);
+  background-image: url(../images/photos/heading-bg.jpg);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -2025,7 +2025,7 @@ Reservation Page Style
 */
 
 .second-page-heading {
-  background-image: url(../images/heading-bg-02.jpg);
+  background-image: url(../images/photos/heading-bg-02.jpg);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
