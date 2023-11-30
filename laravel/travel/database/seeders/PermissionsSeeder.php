@@ -34,6 +34,7 @@ class PermissionsSeeder extends Seeder
         Permission::create(['name' => 'delete review']);
         Permission::create(['name' => 'change review']);
 
+        Permission::create(['name' => 'create category']);
         Permission::create(['name' => 'manage trip']);
         Permission::create(['name' => 'add trip']);
         Permission::create(['name' => 'delete trip']);

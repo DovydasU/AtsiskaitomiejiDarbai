@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
+use Illuminate\Support\Facades\Gate;
 
 class CategoryController extends Controller
 {
@@ -23,7 +24,11 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        if (Gate::allows('create-category')) {
+            return view('category.create');
+        }
+    
+        abort(403, 'Unauthorized action.');
     }
 
     /**
@@ -31,7 +36,11 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $request)
     {
-        //
+        $category = new Category();
+        $category->name = $request->input('name');
+        $category->save();
+
+        return redirect()->route('category.index')->with('success', 'Category created successfully');
     }
 
     /**
@@ -39,8 +48,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        $categories = Category::all();
-        return view('category', compact('categories', 'category'));
+        //
     }
 
     /**
@@ -56,7 +64,10 @@ class CategoryController extends Controller
      */
     public function update(UpdateCategoryRequest $request, Category $category)
     {
-        //
+        $category->name = $request->input('name');
+        $category->save();
+
+        return redirect()->route('category.index')->with('success', 'Category updated successfully');
     }
 
     /**
@@ -64,6 +75,11 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        if (Gate::allows('delete-category', $category)) {
+            $category->delete();
+            return redirect()->route('category.index')->with('success', 'Category deleted successfully');
+        }
+
+        abort(403, 'Unauthorized action.');
     }
 }

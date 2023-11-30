@@ -25,6 +25,14 @@ class AuthServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->registerPolicies();
+    
+        Gate::define('create-category', function ($user) {
+            return $user->hasRole('svetaines administratorius');
+        });
+        
+        Gate::define('delete-category', function ($user, $category) {
+            return $user->hasRole('svetaines administratorius');
+        });        
 
         Gate::define('delete-user', function ($user, $targetUser) {
             // Check if the authenticated user has the "svetaines administratorius" role
