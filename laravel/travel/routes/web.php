@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Category;
 use App\Policies\TripPolicy;
 use Spatie\Permission\Models\Permission;
 use Illuminate\Support\Facades\Auth;

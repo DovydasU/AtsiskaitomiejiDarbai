@@ -7,7 +7,7 @@
         <h5 class="card-header">Edit Trip</h5>
         <div class="card-body">
             <!-- Your create form goes here -->
-            <form action="{{ route('trip.update', $trip->id) }}" method="POST">
+            <form action="{{ route('trip.update', $trip->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
 

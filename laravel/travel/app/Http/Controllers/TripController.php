@@ -11,6 +11,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreTripRequest;
 use App\Http\Requests\UpdateTripRequest;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 
 class TripController extends Controller
 {
@@ -99,10 +100,17 @@ class TripController extends Controller
 
         // Handle image update only if a new image is provided
         if ($request->hasFile('image')) {
-            $name = $trip->id . '-' . time() . '-' . $request->image->getClientOriginalName();
+            // Remove the existing image file
+            Storage::disk('public')->delete('trip/' . $trip->image);
+
+            // Upload and save the new image
+            $name = $trip->id . '-' . time() . '-' . $request->file('image')->getClientOriginalName();
             $name = str_replace(' ', '', $name);
-            $request->image->storeAs('trip', $name, 'public');
+            $request->file('image')->storeAs('trip', $name, 'public');
             $tripData['image'] = $name;
+        } else {
+            // Keep the existing image link if no new image is provided
+            $tripData['image'] = $trip->image;
         }
 
         $trip->update($tripData);

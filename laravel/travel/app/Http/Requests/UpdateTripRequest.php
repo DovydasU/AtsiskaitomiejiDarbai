@@ -27,7 +27,7 @@ class UpdateTripRequest extends FormRequest
             'choice' => 'required',
             'location' => 'required',
             'price' => 'required',
-            'image' => 'nullable',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'space' => 'required',
             'description' => 'required',
             'contact' => 'required',

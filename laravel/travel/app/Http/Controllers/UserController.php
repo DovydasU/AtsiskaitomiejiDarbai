@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Gate;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
@@ -17,18 +19,6 @@ class UserController extends Controller
         $user_list = User::all();
         return view('user.index', compact("user_list"));
     }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
-     public function table()
-     {
-         $user_list = User::all();
-         return view('table', compact("user_list"));
-     }
 
     /**
      * Show the form for creating a new resource.
@@ -73,8 +63,20 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(User $user)
     {
-        //
+        // Check if the authenticated user has the "svetaines administratorius" role
+        if (Gate::allows('delete-user', $user)) {
+            try {
+                $user->delete();
+                return redirect()->route('user.index')->with('success', 'User deleted successfully');
+            } catch (\Exception $e) {
+                // Log the error or handle it as needed
+                return redirect()->route('user.index')->with('error', 'Error deleting user');
+            }
+        } else {
+            // Unauthorized user attempt
+            abort(403, 'Unauthorized action.');
+        }
     }
 }
