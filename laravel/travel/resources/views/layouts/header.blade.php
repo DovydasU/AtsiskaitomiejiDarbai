@@ -25,6 +25,7 @@
                                 </li>
                             </ul>
                         </li>
+                        <li><a href="{{ route('admin')}}" class="{{ request()->routeIs('admin') ? 'active' : '' }}">Administration</a></li>
                     </ul>
                 </nav>
             </div>

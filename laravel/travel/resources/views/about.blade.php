@@ -35,49 +35,49 @@
                             <div class="owl-cites-town owl-carousel">
                                 <div class="item">
                                     <div class="thumb">
-                                        <img src="images/cities-01.jpg" alt="">
+                                        <img src="images/photos/photos/cities-01.jpg" alt="">
                                         <h4>Havana</h4>
                                     </div>
                                 </div>
                                 <div class="item">
                                     <div class="thumb">
-                                        <img src="images/cities-02.jpg" alt="">
+                                        <img src="images/photos/cities-02.jpg" alt="">
                                         <h4>Kingston</h4>
                                     </div>
                                 </div>
                                 <div class="item">
                                     <div class="thumb">
-                                        <img src="images/cities-03.jpg" alt="">
+                                        <img src="images/photos/cities-03.jpg" alt="">
                                         <h4>George Town</h4>
                                     </div>
                                 </div>
                                 <div class="item">
                                     <div class="thumb">
-                                        <img src="images/cities-04.jpg" alt="">
+                                        <img src="images/photos/cities-04.jpg" alt="">
                                         <h4>Santo Domingo</h4>
                                     </div>
                                 </div>
                                 <div class="item">
                                     <div class="thumb">
-                                        <img src="images/cities-01.jpg" alt="">
+                                        <img src="images/photos/cities-01.jpg" alt="">
                                         <h4>Havana</h4>
                                     </div>
                                 </div>
                                 <div class="item">
                                     <div class="thumb">
-                                        <img src="images/cities-02.jpg" alt="">
+                                        <img src="images/photos/cities-02.jpg" alt="">
                                         <h4>Kingston</h4>
                                     </div>
                                 </div>
                                 <div class="item">
                                     <div class="thumb">
-                                        <img src="images/cities-03.jpg" alt="">
+                                        <img src="images/photos/cities-03.jpg" alt="">
                                         <h4>George Town</h4>
                                     </div>
                                 </div>
                                 <div class="item">
                                     <div class="thumb">
-                                        <img src="images/cities-04.jpg" alt="">
+                                        <img src="images/photos/cities-04.jpg" alt="">
                                         <h4>Santo Domingo</h4>
                                     </div>
                                 </div>
@@ -107,7 +107,7 @@
                     <div class="owl-weekly-offers owl-carousel">
                         <div class="item">
                             <div class="thumb">
-                                <img src="images/offers-01.jpg" alt="">
+                                <img src="images/photos/offers-01.jpg" alt="">
                                 <div class="text">
                                     <h4>Havana<br><span><i class="fa fa-users"></i> 234 Check Ins</span></h4>
                                     <h6>$420<br><span>/person</span></h6>
@@ -126,7 +126,7 @@
                         </div>
                         <div class="item">
                             <div class="thumb">
-                                <img src="images/offers-02.jpg" alt="">
+                                <img src="images/photos/offers-02.jpg" alt="">
                                 <div class="text">
                                     <h4>Kingston<br><span><i class="fa fa-users"></i> 234 Check Ins</span></h4>
                                     <h6>$420<br><span>/person</span></h6>
@@ -145,7 +145,7 @@
                         </div>
                         <div class="item">
                             <div class="thumb">
-                                <img src="images/offers-03.jpg" alt="">
+                                <img src="images/photos/offers-03.jpg" alt="">
                                 <div class="text">
                                     <h4>George Town<br><span><i class="fa fa-users"></i> 234 Check Ins</span></h4>
                                     <h6>$420<br><span>/person</span></h6>
@@ -164,7 +164,7 @@
                         </div>
                         <div class="item">
                             <div class="thumb">
-                                <img src="images/offers-01.jpg" alt="">
+                                <img src="images/photos/offers-01.jpg" alt="">
                                 <div class="text">
                                     <h4>Havana<br><span><i class="fa fa-users"></i> 234 Check Ins</span></h4>
                                     <h6>$420<br><span>/person</span></h6>
@@ -183,7 +183,7 @@
                         </div>
                         <div class="item">
                             <div class="thumb">
-                                <img src="images/offers-02.jpg" alt="">
+                                <img src="images/photos/offers-02.jpg" alt="">
                                 <div class="text">
                                     <h4>Kingston<br><span><i class="fa fa-users"></i> 234 Check Ins</span></h4>
                                     <h6>$420<br><span>/person</span></h6>
@@ -202,7 +202,7 @@
                         </div>
                         <div class="item">
                             <div class="thumb">
-                                <img src="images/offers-03.jpg" alt="">
+                                <img src="images/photos/offers-03.jpg" alt="">
                                 <div class="text">
                                     <h4>George Town<br><span><i class="fa fa-users"></i> 234 Check Ins</span></h4>
                                     <h6>$420<br><span>/person</span></h6>
@@ -230,7 +230,7 @@
             <div class="row">
                 <div class="col-lg-6 align-self-center">
                     <div class="left-image">
-                        <img src="images/about-left-image.jpg" alt="">
+                        <img src="images/photos/about-left-image.jpg" alt="">
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -272,94 +272,6 @@
                     </p>
                     <div class="main-button">
                         <a href="">Discover More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="best-locations">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 offset-lg-3">
-                    <div class="section-heading text-center">
-                        <h2>Best Locations In Caribbeans</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore.</p>
-                    </div>
-                </div>
-                <div class="col-lg-8 offset-lg-2">
-                    <div class="options">
-                        <div class="option active"
-                            style="--optionBackground:url(https://buttoncreatives.com/html/woox/assets/images/best-01.jpg);">
-                            <div class="shadow"></div>
-                            <div class="label">
-                                <div class="icon">
-                                    <i class="fas fa-expand"></i>
-                                </div>
-                                <div class="info">
-                                    <div class="main">Havana</div>
-                                    <div class="sub">Population: 2M</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="option"
-                            style="--optionBackground:url(https://buttoncreatives.com/html/woox/assets/images/best-02.jpg);">
-                            <div class="shadow"></div>
-                            <div class="label">
-                                <div class="icon">
-                                    <i class="fas fa-expand"></i>
-                                </div>
-                                <div class="info">
-                                    <div class="main">Kingston</div>
-                                    <div class="sub">Population: 3.5M</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="option"
-                            style="--optionBackground:url(https://buttoncreatives.com/html/woox/assets/images/best-03.jpg);">
-                            <div class="shadow"></div>
-                            <div class="label">
-                                <div class="icon">
-                                    <i class="fas fa-expand"></i>
-                                </div>
-                                <div class="info">
-                                    <div class="main">London</div>
-                                    <div class="sub">Population: 4.1M</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="option"
-                            style="--optionBackground:url(https://buttoncreatives.com/html/woox/assets/images/best-04.jpg);">
-                            <div class="shadow"></div>
-                            <div class="label">
-                                <div class="icon">
-                                    <i class="fas fa-expand"></i>
-                                </div>
-                                <div class="info">
-                                    <div class="main">Pristina</div>
-                                    <div class="sub">Population: 520K</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="option"
-                            style="--optionBackground:url(https://buttoncreatives.com/html/woox/assets/images/best-05.jpg);">
-                            <div class="shadow"></div>
-                            <div class="label">
-                                <div class="icon">
-                                    <i class="fas fa-expand"></i>
-                                </div>
-                                <div class="info">
-                                    <div class="main">Paris</div>
-                                    <div class="sub">Population: 3M</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="main-button text-center">
-                        <a href="">Discover All Places</a>
                     </div>
                 </div>
             </div>
