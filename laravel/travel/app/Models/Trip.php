@@ -11,7 +11,18 @@ class Trip extends Model
     use HasFactory;
     public $timestamps = false;
 
-    protected $fillable = ['name', 'category_id', 'location', 'image', 'space', 'space_used', 'price', 'description', 'contact', 'start', 'end', 'user_id'];
+    protected $fillable = ['name', 
+    'category_id', 
+    'location', 
+    'image', 
+    'space', 
+    'space_used', 
+    'price', 
+    'description', 
+    'contact', 
+    'start', 
+    'end', 
+    'user_id'];
 
     public function category(): BelongsTo
     {

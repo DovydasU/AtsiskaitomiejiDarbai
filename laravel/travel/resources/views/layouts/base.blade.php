@@ -58,11 +58,10 @@
         </div>
     </div>
 
-    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/isotope.min.js') }}"></script>
     <script src="{{ asset('js/owl-carousel.js') }}"></script>
-    <script src="{{ asset('js/wow.js') }}"></script>
     <script src="{{ asset('js/tabs.js') }}"></script>
     <script src="{{ asset('js/popup.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>

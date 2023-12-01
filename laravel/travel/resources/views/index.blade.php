@@ -254,10 +254,10 @@
 
         var bannerTimer = setInterval(bannerSwitcher, 5000);
 
-        $('nav .controls label').click(function() {
-            clearInterval(bannerTimer);
-            bannerTimer = setInterval(bannerSwitcher, 5000)
-        });
+        // $('nav .controls label').click(function() {
+        //     clearInterval(bannerTimer);
+        //     bannerTimer = setInterval(bannerSwitcher, 5000)
+        // });
     </script>
 @endsection
 

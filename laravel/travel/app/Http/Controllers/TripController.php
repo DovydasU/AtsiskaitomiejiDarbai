@@ -61,15 +61,12 @@ class TripController extends Controller
             $trip->image = $name;
             $trip->save();
 
-            // Log success or any other information
             Log::info('Trip created successfully', ['trip_id' => $trip->id]);
 
             return redirect()->route('trip.index')->with('success', 'Trip has been created successfully.');
         } catch (\Exception $e) {
-            // Log the error
             Log::error('Error creating trip: ' . $e->getMessage());
             dd($e->getMessage());
-            // Display a generic error message or redirect with an error status
             return redirect()->route('trip.index')->with('error', 'Error creating trip. Please try again.');
         }
     }
